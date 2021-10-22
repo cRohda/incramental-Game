@@ -1,30 +1,19 @@
+# https://realpython.com/python-gui-tkinter/#check-your-understanding_1
 import tkinter as tk
 
-while True:
-    window = tk.Tk()
-    window.title('You are infected')
-    window.configure(width=500, heigh=300)
-    window.configure(bg='red')
-    label = tk.Label(
-        text='you are infected with many virus',
-        fg='black',
-        bg='red',
-        width=1000,
-        height=20
-    )
-    CCN = tk.Label(
-        text='enter your credit card number to clean your computer:',
-        fg='black',
-        bg='red',
-        width=500,
-        height=3
-    )
-    CC = tk.Entry(
-        bg='white',
-        fg='black',
-        width=500
-    )
-    label.pack()
-    CCN.pack()
-    CC.pack()
-    window.mainloop()
+window = tk.Tk()
+
+for i in range(1, 6):
+    window.columnconfigure(i, weight=1, minsize=30)
+    window.rowconfigure(i, weight=1, minsize=25)
+    for j in range(1, 6):
+        frame = tk.Frame(
+            master=window,
+            relief=tk.RAISED,
+            borderwidth=3
+        )
+        frame.grid(row=i, column=j)
+        label = tk.Label(master=frame, text=f'Row {i}\nColumn {j}')
+        label.pack()
+
+window.mainloop()
