@@ -2,18 +2,36 @@
 import tkinter as tk
 
 window = tk.Tk()
+window.title('Address Entry Form')
 
-for i in range(1, 6):
-    window.columnconfigure(i, weight=1, minsize=30)
-    window.rowconfigure(i, weight=1, minsize=25)
-    for j in range(1, 6):
-        frame = tk.Frame(
-            master=window,
-            relief=tk.RAISED,
-            borderwidth=3
-        )
-        frame.grid(row=i, column=j)
-        label = tk.Label(master=frame, text=f'Row {i}\nColumn {j}')
-        label.pack()
+frm_form = tk.Frame(relief=tk.SUNKEN, borderwidth=3)
+frm_form.pack()
+
+# First, last, Add1, Add2, City, State, Code, Country
+labels = [
+    'First Name:',
+    'Last Name:',
+    'Address Line 1:',
+    'Address Line 2:',
+    'City',
+    'State/Province',
+    'Postal Code',
+    'Country',
+]
+
+for idx, text in enumerate(labels):
+    label = tk.Label(master=frm_form, text=text)
+    entry = tk.Entry(master=frm_form, width=50)
+    label.grid(row=idx, column=0, sticky='e')
+    entry.grid(row=idx, column=1)
+
+frm_buttons = tk.Frame()
+frm_buttons.pack(fill=tk.X, ipadx=5, ipady=5)
+
+btn_submit = tk.Button(master=frm_buttons, text='Submit')
+btn_submit.pack(side=tk.RIGHT, padx=10, ipadx=10)
+
+btn_clear = tk.Button(master=frm_buttons, text='Clear')
+btn_clear.pack(side=tk.RIGHT, padx=10, ipadx=10)
 
 window.mainloop()
