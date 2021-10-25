@@ -1,0 +1,10 @@
+
+instructions = tk.Label(text='Click the logo to start', bg='white', fg='black')
+moneysign = tk.Label(text='$', bg='white', fg='black')
+money = tk.Label(text='0', bg='white', fg='black')
+lemonade = tk.Button(image=picture, command=click)
+
+instructions.grid(row=0, column=3, sticky='nsew')
+moneysign.grid(row=0, column=5, sticky='e')
+money.grid(row=0, column=6, sticky='w')
+lemonade.grid(row=1, column=3)
