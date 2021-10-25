@@ -1,15 +1,24 @@
 # https://realpython.com/python-gui-tkinter/#check-your-understanding_1
 import tkinter as tk
 
+def click():
+    value = int(money["text"])
+    money["text"] = f"{value + 1}"
+
+frm_form = tk.Frame(relief=tk.RAISED)
+frm_form.pack()
+
 window = tk.Tk()
-window.title('sprites test')
-mlabel = tk.Label(text='Sprites Test', fg='yellow', bg='green').pack()
+window.title('Clicker')
 
-canvas = tk.Canvas(window, width=1000, height=1000, bg='white')
+instructions = tk.Label(master=frm_form, text='Click the button to earn money!')
+moneysign = tk.Label(master=frm_form, text='$')
+money = tk.Label(master=frm_form, text='0')
+lemonade = tk.Button(master=frm_form, text='click me', command=click)
 
-gif1 = tk.PhotoImage(file='sprite.gif')
-id1 = canvas.create_image(500, 500, image=gif1)
-canvas.pack(padx=10, pady=10)
+instructions.grid(row=0, column=3, sticky='nsew')
+moneysign.grid(row=0, column=5, sticky='e')
+money.grid(row=0, column=6, sticky='w')
+lemonade.grid(row=1, column=3)
 
-canvas.mainloop()
 window.mainloop()
