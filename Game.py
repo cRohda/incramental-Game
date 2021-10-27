@@ -1,7 +1,7 @@
-# https://realpython.com/python-gui-tkinter/#check-your-understanding_1
 import tkinter as tk
 import webbrowser
-import time
+from time import sleep
+
 
 def click():
     value = int(money["text"])
@@ -13,7 +13,14 @@ def rickroll():
     webbrowser.get(chrome_path).open(url)
 
 def p1():
-    print('Autoclicker')
+    if int(money['text']) >= 50:
+        p1loss = int(money['text'])
+        money['text'] = f'{p1loss - 50}'
+        while True:
+            acvalue = int(money['text'])
+            money['text'] = f'{acvalue + 1}'
+            sleep(5)
+
 
 window = tk.Tk()
 window.title('BC High Clicker')
