@@ -42,11 +42,11 @@ mouse = tk.PhotoImage(file='Power1.png')
 
 # Labels
 title = tk.Label(image=header, bg='white')
-space = tk.Label(text="\n\n\n\n", bg='white')
+space = tk.Label(text="\n\n\n", bg='white')
 sign = tk.Label(image=price, bg='white')
-wealth = tk.Label(text='200', font=('Verdana', 69), bg='white', fg='black')
-pps = tk.Label(text='0', font=('Verdana', 40), bg='white', fg='black')
-acamount = tk.Label(text='0', font=('Verdana', 40), bg='white', fg='black')
+wealth = tk.Label(text='200.0', font=('Verdana', 69), bg='white', fg='black')
+pps = tk.Label(text='0.0', font=('Verdana', 40), bg='white', fg='black')
+acamount = tk.Label(text='0.0', font=('Verdana', 40), bg='white', fg='black')
 
 # Buttons
 logo = tk.Button(image=picture, command=click)
