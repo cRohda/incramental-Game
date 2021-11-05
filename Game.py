@@ -1,9 +1,12 @@
 import tkinter as tk
 import webbrowser
-import time
+from time import sleep
 import threading
 
 
+def background():
+    import AutoLoop as a
+    a.loop()
 
 def click():
     value = float(wealth["text"])
@@ -16,7 +19,7 @@ def rickroll():
 
 def overdraft():
     print('Not enough money!')
-    broke.grid(row=3, column=0)
+    broke.grid(row=0, column=3)
 
 def p1():
     if float(wealth['text']) >= 40:
@@ -47,7 +50,7 @@ def p2():
 
 window = tk.Tk()
 window.title('Click The Pizza 3000')
-window.geometry("800x1000")
+window.geometry("1000x1000")
 window.configure(bg='white')
 
 # Images
